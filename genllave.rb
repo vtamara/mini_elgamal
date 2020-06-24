@@ -10,7 +10,6 @@ require_relative 'comunes'
 # p1 primo de 17 bits y p2 primo de 14 bits
 def genera_primo_32bits_con_log_dificil(primos17)
   p = 1
-  puts "Buscando aleatoriamente número primo p de 32 bits"
   p1 = 1
   p2 = 1
   loop do 
@@ -18,16 +17,12 @@ def genera_primo_32bits_con_log_dificil(primos17)
     p1 = primos17[ip1]
     break if p1>2**16 
   end
-  puts "p1=#{p1}"
-  puts p1.to_s(2).length
   loop do
     ip2=Random.new.rand(0..(primos17.length-1))
     p2 = primos17[ip2]
     p = 2*p1*p2+1
     break if (p<2**32) && (p>2**31) && primo_relativo(p, primos17)
   end
-  puts "p2=#{p2}"
-  puts "p=#{p}"
 
   # p=2*p1*p2+1 es primo porque:
   # 1. p tiene exactamente 32 bits porque está entre 2^31 y 2^32
@@ -62,7 +57,6 @@ def genera_generadores_Zap(p, p1, p2, numg)
     k3=2*p2
     if (exp_mod(i, k1, p) != 1 && exp_mod(i, k2, p) != 1 && 
         exp_mod(i, k3, p) != 1)
-      puts "#{i} es generador de Z*_p"
       gen << i
     end
   end
@@ -99,23 +93,16 @@ puts Benchmark.measure {
 puts "Generada tabla con primeros #{primos17.length} primos"
 
 
+puts "Buscando aleatoriamente número primo p de 32 bits"
 p, p1, p2 = genera_primo_32bits_con_log_dificil(primos17)
-puts "p=#{p}"
-puts "p=2*#{p1}*#{p2}+1"
+puts "  p1=#{p1} (es primo de 17 bits)"
+puts "  p2=#{p2} (es primo de 14 bits)"
+puts "  p=2*#{p1}*#{p2}+1=#{p} (es primo de 32 bits)"
 
+
+puts "Buscando aleatoriamente generador de Z*_p"
 gen = genera_generadores_Zap(p, p1, p2, 10)
-puts gen
-
-puts "Alice cual es tu llave privada como cadena (4 letras)"
-priv_cad = $stdin.readline().chop[0..3]
-
-
-priv = codifica_cadena_como_numero(priv_cad)
-puts "tu llave privada como número es #{priv}"
-
-puts "tu primo de 32 bits será p=#{p}"
-
-puts "Cual de los siguientes generadores te gusta:"
+puts "¿Cúal de los siguientes 10 generadores te gusta (teclea un número de 1 a 10)?"
 i = 1
 gen.each do |g|
   puts "#{i}. #{g}"
@@ -127,6 +114,13 @@ if numg>0 && numg<=gen.length
 else
   g = gen[0]
 end
+
+puts "\n¿Alice cual es tu llave privada como cadena (4 letras)?"
+priv_cad = $stdin.readline().chop[0..3]
+
+priv = codifica_cadena_como_numero(priv_cad)
+puts "Tu llave privada como número es #{priv}"
+
 km = exp_mod(g, priv, p)
-puts "Alice, tu llave pública es (g, K, p)=(#{g}, #{km}, #{p})"
+puts "\nAlice, tu llave pública es (g, K, p)=(#{g}, #{km}, #{p})"
 

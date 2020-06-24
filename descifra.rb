@@ -4,36 +4,31 @@
 
 require_relative 'comunes'
 
-puts "Cual es el y1?"
+puts "Alice, ¿Cúal es el y1 que te dió Bob?"
 y1 = $stdin.readline.chop.to_i
-puts "Cual es el y2?"
+puts "Alice, ¿Cúal es el y2 que te dió Bob?"
 y2 = $stdin.readline.chop.to_i
 
-puts "Llave pública de Alice"
-puts "g? "
+puts "Alice, ¿Cúal es tu llave pública?"
+puts "¿g? "
 g = $stdin.readline.chop.to_i
 
-puts "K? "
+puts "¿K? "
 k = $stdin.readline.chop.to_i
 
-puts "p? "
+puts "¿p? "
 p = $stdin.readline.chop.to_i
 
-puts "Llave privada de Alice"
-puts "a? "
+puts "Alice, ¿Cúal es tu llave privada?"
 ac = $stdin.readline.chop
 a = codifica_cadena_como_numero(ac)
-puts "a es #{a}"
+puts "Tu llave como numero es #{a}"
+
 m = (exp_mod(y1, -a, p) * y2) % p
-
-puts "m=#{m}"
-
 mb = m.to_s(2)
 
-puts "mb=#{mb}"
-puts "mb.length=#{mb.length}"
+puts "El mensaje que Bob te envio como numero es m='#{m}' que es de #{mb.length} bits"
 
 c = decodifica_cadena_de_numero(m)
-puts "c=#{c}"
-puts "c.length=#{c.length}"
+puts "El mensaje decodifado es: '#{c}'"
 

@@ -7,20 +7,21 @@ require 'byebug'
 require_relative 'comunes'
 
 
-puts "Llave pública de Alice"
-puts "g? "
+puts "Atacanta, ¿Cúal es la llave pública de Alice?"
+puts "¿g? "
 g = $stdin.readline.chop.to_i
 
-puts "K? "
+puts "¿K? "
 k = $stdin.readline.chop.to_i
 
-puts "p? "
+puts "¿p? "
 p = $stdin.readline.chop.to_i
 
-puts "Cual es el y1?"
+puts "Atacante, ¿Cuál es el mensaje cifrado?"
+puts "¿y1?"
 y1 = $stdin.readline().to_i
 
-puts "Cual es el y2?"
+puts "¿y2?"
 y2 = $stdin.readline().to_i
 
 # Encuentra b tal que g**b = l mod p por fuerza re-bruta
@@ -34,21 +35,20 @@ def log_mod(g, l, p)
 end
 
 
+puts "Quebrado"
 b = log_mod(g, y1, p)
-puts "b es #{b}"
+puts "  b es #{b}"
 
 f = exp_mod(k, b, p)
-puts "f es #{f}"
+puts "  f es #{f}"
 
 fi = inversomult_mod(f, p)
-puts "inverso de f es #{fi}"
+puts "  inverso de f es #{fi}"
 
-mc = y2 * fi % p
-puts "mc es #{mc}"
+m = y2 * fi % p
+puts "  m es #{m}"
 
-dm = decodifica_cadena_de_numero(mc)
-puts "dm=#{dm}"
+dm = decodifica_cadena_de_numero(m)
+puts "  El mensaje enviado por Bob a Alice fue '#{dm}'"
 
-
-# ElGamal se fortalece haciendo dificil para el atacante conocer la llave pública de Alice y el mensaje secreto (y1,y2)
 

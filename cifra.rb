@@ -5,29 +5,29 @@
 require 'byebug'
 require_relative 'comunes'
 
-puts "Llave pública de Alice"
-puts "g? "
+puts "Bob, ¿Cúal es la llave pública de Alice?"
+puts "¿g? "
 g = $stdin.readline.chop.to_i
 
-puts "K? "
+puts "¿K? "
 k = $stdin.readline.chop.to_i
 
-puts "p? "
+puts "¿p? "
 p = $stdin.readline.chop.to_i
 
-puts "b aleatoria y secreto entre 0 y #{p}?"
+puts "\nBob ¿Cúal será tu b aleatorio y secreto entre 0 y #{p-1}?"
 b = $stdin.readline.chop.to_i
 
 
-puts "mensaje secreto (cadena de 4 bytes)?"
+puts "\nBob, ¿Cúal será el mensaje a cifrar para Alice (cadena de 4 bytes)?"
 mc = $stdin.readline.chop
 m = codifica_cadena_como_numero(mc)
-puts "m es #{m}"
 mb = m.to_s(2)
-puts "de #{mb.length} bits"
+puts "m como número es #{m} que es de #{mb.length} bits"
 
+puts "\nEl mensaje cifrado (y1, y2):"
 y1 = exp_mod(g, b, p)
-puts "y1=#{y1}"
+puts "  y1=#{y1}"
 
 y2 = (exp_mod(k, b, p) * m) % p
-puts "y2=#{y2}"
+puts "  y2=#{y2}"
