@@ -27,7 +27,6 @@ end
 
 
 # Calcula b**e mod m
-# Calcula exponenciación módulo m
 # https://en.wikipedia.org/wiki/Modular_exponentiation
 def exp_mod(b,e,m)
   if m == 1 then
@@ -54,7 +53,8 @@ def exp_mod(b,e,m)
 end
 
 
-# Convierte un mensaje de texto de 4 bytes a número de 32 bits
+# Convierte un mensaje de texto a número 
+# De cada caracter toma el ordinal (ascii) y concatena las representaciones binarias de todos los caracteres alieandos a 8 bits.
 def codifica_cadena_como_numero(c)
   i = 0
   nb = ""
@@ -67,7 +67,7 @@ def codifica_cadena_como_numero(c)
   return n
 end
 
-# Convierte un número de 32 bits a mensaje de texto de 4 bytes
+# Convierte un entero producido con codifica_cadena_en_numero al mensaje de texto original
 def decodifica_cadena_de_numero(n)
   nb =n.to_s(2)
   while nb.length % 8 != 0
@@ -83,5 +83,58 @@ def decodifica_cadena_de_numero(n)
     nl += 1
   end
   return c
+end
+
+# Genera lista de primos de hasta maxbits bits
+def generaprimos_maxbits(maxbits)
+  primos=[]
+  i = 2
+  m = 2**maxbits
+  while i < m
+    ip = 0
+    while ip < primos.length && i % primos[ip] != 0
+      ip += 1
+    end
+    if ip == primos.length
+      primos.push(i)
+    end
+    i += 1
+  end
+  return primos
+end
+
+# Genera listado de primos de hasta maxbits bits
+# usando criba de Eratostenes.
+# Es un poco más lento que generaprimos_maxbits y requiere mucho espacio
+def generaprimos_maxbits_criba(maxbits)
+  criba = [2]
+  m = 2**maxbits
+  i = 1
+  while i < m/2
+    criba << i*2+1
+    i += 1
+  end
+  pc = 1
+  while pc < criba.length
+    i = pc + 1
+    while (i < criba.length)
+      if criba[i] % criba[pc] == 0
+        criba.delete_at(i)
+      else
+        i += 1
+      end
+    end
+    pc += 1
+  end
+  return criba
+end
+
+
+# Decide si n es primo relativo a los número de la lista numeros
+def primo_relativo(n, lnum)
+  lnum.each do |p|
+    return false if n % p == 0
+  end
+  return true
 end
 
