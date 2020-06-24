@@ -7,19 +7,20 @@ debe ser de mínimo 1024 bits.
 Se basa en la descripción de <https://es.wikipedia.org/wiki/Cifrado_ElGamal>
 
 A partir de la cual se implementan 4 pequeños programas:
-a. Uno que genera una llave de 32 bits basada en un primo al que es dificil calcularle el logaritmo
-b. Uno que cifra un mensaje de 4 caracteres
-c. Uno que descifra un mensaje de 4 caracteres
-d. Uno que con suficiente tiempo puede quebrar ElGamal descifrando un mensaje cifrado de 4 caracteres
+
+* Uno que genera una llave de 32 bits basada en un primo al que es dificil calcularle el logaritmo
+* Uno que cifra un mensaje de 4 caracteres
+* Uno que descifra un mensaje de 4 caracteres
+* Uno que con suficiente tiempo puede quebrar ElGamal descifrando un mensaje cifrado de 4 caracteres
    conociendo la llave pública y el mensaje cifrado pero no la llave privada
 
 
 A continuación ejemplificamos el uso de los 4 programas:
 
-# Generación de llaves
+# 1. Generación de llaves
 
 ```sh
-# ./genllave.rb
+$ ./genllave.rb
 Generando tabla de primos de hasta 17 bits
   5.770000   0.000000   5.770000 (  5.769579)
 Generada tabla con primeros 12251 primos 
@@ -48,10 +49,9 @@ Tu llave privada como número es 1634561906
 Alice, tu llave pública es (g, K, p)=(1574970086, 1849619751, 2548861907)
 ```
 
-# Cifrado
+# 2. Cifrado
 
 ```
-$ ./cifra.rb
 $ ./cifra.rb
 Bob, ¿Cúal es la llave pública de Alice?
 ¿g? 
@@ -73,7 +73,7 @@ El mensaje cifrado (y1, y2):
   y2=1030773935
 ```
 
-# Descifrado
+# 3. Descifrado
 
 ```
 $ ./descifra.rb
@@ -95,7 +95,7 @@ El mensaje que Bob te envio como numero es m='1651074414' que es de 31 bits
 El mensaje decodifado es: 'bien'
 ```
 
-4. Quiebra 
+# 4. Quiebra 
 
 ```
 $ ./quiebra.rb
