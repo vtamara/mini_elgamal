@@ -14,8 +14,10 @@ A partir de la cual se implementan 4 pequeños programas:
 * Uno que con suficiente tiempo puede quebrar ElGamal descifrando un mensaje cifrado de 4 caracteres
    conociendo la llave pública y el mensaje cifrado pero no la llave privada
 
+Los 4 programas usan varias funciones del archivo `comunes.rb`
+cuyas pruebas de regresión están en `prueba_comunes.rb`
 
-A continuación ejemplificamos el uso de los 4 programas:
+Las siguientes secciones ejemplifican el uso de los 4 programas.
 
 # 1. Generación de llaves
 
