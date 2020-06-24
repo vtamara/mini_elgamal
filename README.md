@@ -15,7 +15,9 @@ A partir de la cual se implementan 4 pequeños programas:
    conociendo la llave pública y el mensaje cifrado pero no la llave privada
 
 Los 4 programas usan varias funciones del archivo `comunes.rb`
-cuyas pruebas de regresión están en `prueba_comunes.rb`
+cuyas pruebas de regresión están en `prueba_comunes.rb` y que
+ejecuta con 
+      ./prueba_comunes.rb
 
 Las siguientes secciones ejemplifican el uso de los 4 programas.
 
