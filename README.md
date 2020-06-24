@@ -17,7 +17,9 @@ A partir de la cual se implementan 4 pequeños programas:
 Los 4 programas usan varias funciones del archivo `comunes.rb`
 cuyas pruebas de regresión están en `prueba_comunes.rb` y que
 ejecuta con 
-      ./prueba_comunes.rb
+```
+  ./prueba_comunes.rb
+```
 
 Las siguientes secciones ejemplifican el uso de los 4 programas.
 
