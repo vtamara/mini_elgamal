@@ -3,7 +3,6 @@
 # vtamara@pasosdeJesus.org. 2020. Dominio público
 
 require 'benchmark'
-require 'byebug'
 require_relative 'comunes'
 
 # Genera un primo p de 32 bits de la forma 2*p1*p2+1 con 
@@ -97,7 +96,7 @@ puts "Buscando aleatoriamente número primo p de 32 bits"
 p, p1, p2 = genera_primo_32bits_con_log_dificil(primos17)
 puts "  p1=#{p1} (es primo de 17 bits)"
 puts "  p2=#{p2} (es primo de 14 bits)"
-puts "  p=2*#{p1}*#{p2}+1=#{p} (es primo de 32 bits)"
+puts "  p=2*p1*p2+1=2*#{p1}*#{p2}+1=#{p} (es primo de 32 bits)"
 
 
 puts "Buscando aleatoriamente generador de Z*_p"
