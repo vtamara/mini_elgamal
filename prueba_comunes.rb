@@ -4,7 +4,6 @@
 
 require 'minitest/autorun'
 require_relative 'comunes'
-require 'byebug'
 
 class PruebaComunes < Minitest::Test
   def setup
