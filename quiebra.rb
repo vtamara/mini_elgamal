@@ -6,7 +6,7 @@ require 'benchmark'
 require_relative 'comunes'
 
 
-puts "Atacanta, ¿Cúal es la llave pública de Alice?"
+puts "Atacante, ¿Cúal es la llave pública de Alice?"
 puts "¿g? "
 g = $stdin.readline.chop.to_i
 
