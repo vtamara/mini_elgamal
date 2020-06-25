@@ -4,7 +4,7 @@
 *No usar para nada serio, porque la llave recomendada en la actualidad
 debe ser de mínimo 1024 bits.*
 
-Se basa en la descripción de 
+Se basa en la descripción de <https://es.wikipedia.org/wiki/Cifrado_ElGamal>
 
 Este repositorio incluye:
 * Un documento con definiciones previas a la lectura de <https://es.wikipedia.org/wiki/Cifrado_ElGamal> y un ejemplo muy sencillo de cifrado/descifrado.  Disponible en formatos ODT y PDF en <https://github.com/vtamara/mini_elgamal/tree/master/ref>.  La fuente del documento es: <https://docs.google.com/document/d/1NDtZxxypZ29fSbg8Ta2t9dGH4UjfZfv3P0FH07WEyJ4/edit?usp=sharing>
