@@ -6,10 +6,11 @@ debe ser de mínimo 1024 bits.
 
 Se basa en la descripción de <https://es.wikipedia.org/wiki/Cifrado_ElGamal>
 La cual se ha procurado explicar con definiciones previas y un ejemplo muy sencillo 
-en: https://docs.google.com/document/d/1NDtZxxypZ29fSbg8Ta2t9dGH4UjfZfv3P0FH07WEyJ4/edit?usp=sharing
-Documento que se publica también en ODT y PDF en <>
+en: <https://docs.google.com/document/d/1NDtZxxypZ29fSbg8Ta2t9dGH4UjfZfv3P0FH07WEyJ4/edit?usp=sharing>
+Documento que se publica también en ODT y PDF en <https://github.com/vtamara/mini_elgamal/tree/master/ref>
 
-A partir de la cual se implementan 4 pequeños programas:
+
+Con base en ese ejmplo se implementan 4 pequeños programas:
 
 * Uno que genera una llave de 32 bits basada en un primo al que es dificil calcularle el logaritmo
 * Uno que cifra un mensaje de 4 caracteres
@@ -107,24 +108,16 @@ El mensaje decodifado es: 'bien'
 # 4. Quiebra 
 
 ```
-$ ./quiebra.rb
+$ ./quiebra.rb 
 Atacanta, ¿Cúal es la llave pública de Alice?
-¿g?
+¿g? 
 1574970086
-¿K?
+¿K? 
 1849619751
-¿p?
+¿p? 
 2548861907
-Atacante, ¿Cuál es el mensaje cifrado?
-¿y1?
-1852640933      
-¿y2?
-1030773935
-Quebrado
-  b es 14123412
-  f es 803902603
-  Inverso de f es 2494509548
-  m es 1651074414
-  El mensaje enviado por Bob a Alice fue 'bien'
+Quebrando
+  a es 1634561906
+  La clave cifrada de Alice fue 'amor'
 ```
 

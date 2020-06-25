@@ -3,7 +3,6 @@
 # vtamara@pasosdeJesus.org. 2020. Dominio público
 
 require 'benchmark'
-require 'byebug'
 require_relative 'comunes'
 
 
@@ -17,13 +16,6 @@ k = $stdin.readline.chop.to_i
 puts "¿p? "
 p = $stdin.readline.chop.to_i
 
-puts "Atacante, ¿Cuál es el mensaje cifrado?"
-puts "¿y1?"
-y1 = $stdin.readline().to_i
-
-puts "¿y2?"
-y2 = $stdin.readline().to_i
-
 # Encuentra b tal que g**b = l mod p por fuerza re-bruta
 # Hay mejor algoritmo
 def log_mod(g, l, p)
@@ -35,20 +27,11 @@ def log_mod(g, l, p)
 end
 
 
-puts "Quebrado"
-b = log_mod(g, y1, p)
-puts "  b es #{b}"
+puts "Quebrando"
+a = log_mod(g, k, p)
+puts "  a es #{a}"
 
-f = exp_mod(k, b, p)
-puts "  f es #{f}"
-
-fi = inversomult_mod(f, p)
-puts "  inverso de f es #{fi}"
-
-m = y2 * fi % p
-puts "  m es #{m}"
-
-dm = decodifica_cadena_de_numero(m)
-puts "  El mensaje enviado por Bob a Alice fue '#{dm}'"
+da = decodifica_cadena_de_numero(a)
+puts "  La clave cifrada de Alice fue '#{da}'"
 
 
