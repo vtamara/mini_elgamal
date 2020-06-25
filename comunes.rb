@@ -1,6 +1,7 @@
 # Funciones comunes para ElGamal.
 # vtamara@pasosdeJesus.org. 2020. Dominio público
 
+# Inverso multiplicativo de a en Z*_m con m primo.
 # Traducido de https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Computing_multiplicative_inverses_in_modular_structures
 def inversomult_mod(a, m)
   t = 0
@@ -130,7 +131,7 @@ def generaprimos_maxbits_criba(maxbits)
 end
 
 
-# Decide si n es primo relativo a los número de la lista numeros
+# Decide si n es primo relativo a los número de la lista lnum
 def primo_relativo(n, lnum)
   lnum.each do |p|
     return false if n % p == 0
