@@ -1,29 +1,24 @@
-Implementación mínima del cifrado ElGamal con llaves inseguras de 32 bits.
+# Implementación mínima del cifrado ElGamal con llaves inseguras de 32 bits.
 
 
-No usar para nada serio, porque la llave recomendada en la actualidad
-debe ser de mínimo 1024 bits.
+*No usar para nada serio, porque la llave recomendada en la actualidad
+debe ser de mínimo 1024 bits.*
 
-Se basa en la descripción de <https://es.wikipedia.org/wiki/Cifrado_ElGamal>
-La cual se ha procurado explicar con definiciones previas y un ejemplo muy sencillo 
-en: <https://docs.google.com/document/d/1NDtZxxypZ29fSbg8Ta2t9dGH4UjfZfv3P0FH07WEyJ4/edit?usp=sharing>
-Documento que se publica también en ODT y PDF en <https://github.com/vtamara/mini_elgamal/tree/master/ref>
+Se basa en la descripción de 
 
-
-Con base en ese ejmplo se implementan 4 pequeños programas:
-
-* Uno que genera una llave de 32 bits basada en un primo al que es dificil calcularle el logaritmo
-* Uno que cifra un mensaje de 4 caracteres
-* Uno que descifra un mensaje de 4 caracteres
-* Uno que con suficiente tiempo puede quebrar ElGamal descifrando un mensaje cifrado de 4 caracteres
-   conociendo la llave pública y el mensaje cifrado pero no la llave privada
-
-Los 4 programas usan varias funciones del archivo `comunes.rb`
-cuyas pruebas de regresión están en `prueba_comunes.rb` y que
-ejecuta con 
+Este repositorio incluye:
+* Un documento con definiciones previas a la lectura de <https://es.wikipedia.org/wiki/Cifrado_ElGamal> y un ejemplo muy sencillo de cifrado/descifrado.  Disponible en formatos ODT y PDF en <https://github.com/vtamara/mini_elgamal/tree/master/ref>.  La fuente del documento es: <https://docs.google.com/document/d/1NDtZxxypZ29fSbg8Ta2t9dGH4UjfZfv3P0FH07WEyJ4/edit?usp=sharing>
+* 4 pequeños programas:
+   * `generallave.rb`: Genera una llave de 32 bits basada en un primo al que es "dificil" calcularle el logaritmo
+   * `cifra.rb`: Cifra un mensaje de 4 caracteres
+   * `descifra.rb`: Descifra un mensaje de 4 caracteres
+   * `quiebra.rb`: Con suficiente tiempo puede quebrar ElGamal encontrando la llave privada a partir de una llave pública.
+* El archivo de funciones comunes `comunes.rb`
+* Pruebas de regresión a las funciones comúnes  en `prueba_comunes.rb`, que se ejecuta con 
 ```
   ./prueba_comunes.rb
 ```
+
 
 Las siguientes secciones ejemplifican el uso de los 4 programas.
 
