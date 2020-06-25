@@ -14,7 +14,7 @@ Este repositorio incluye:
    * `descifra.rb`: Descifra un mensaje de 4 caracteres
    * `quiebra.rb`: Con suficiente tiempo puede quebrar ElGamal encontrando la llave privada a partir de una llave pública.
 * El archivo de funciones comunes `comunes.rb`
-* Pruebas de regresión a las funciones comúnes  en `prueba_comunes.rb`, que se ejecuta con 
+* Pruebas de regresión a las funciones comúnes, que se ejecutan con 
 ```
   ./prueba_comunes.rb
 ```
