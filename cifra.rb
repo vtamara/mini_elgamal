@@ -2,7 +2,6 @@
 # Cifra mensaje de 4 bytes con ElGamal
 # vtamara@pasosdeJesus.org. 20202. Dominio público
 
-require 'byebug'
 require_relative 'comunes'
 
 puts "Bob, ¿Cúal es la llave pública de Alice?"
