@@ -34,7 +34,7 @@ Buscando aleatoriamente número primo p de 32 bits
   p2=11497 (es primo de 14 bits)
   p=2*110849*11497+1=2548861907 (es primo de 32 bits)
 Buscando aleatoriamente generador de Z*_p
-¿Cúal de los siguientes 10 generadores te gusta (teclea un número de 1 a 10)?
+Alice, ¿Cúal de los siguientes 10 generadores te gusta (teclea un número de 1 a 10)?
 1. 1953695746
 2. 1223416769
 3. 1240374761
@@ -47,7 +47,7 @@ Buscando aleatoriamente generador de Z*_p
 10. 912756325
 5
 
-¿Alice cual es tu llave privada como cadena (4 letras)?
+Alice ¿Cúal es tu llave privada como cadena (4 letras)?
 amor
 Tu llave privada como número es 1634561906
 
