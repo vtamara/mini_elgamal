@@ -102,7 +102,7 @@ puts "  p=2*#{p1}*#{p2}+1=#{p} (es primo de 32 bits)"
 
 puts "Buscando aleatoriamente generador de Z*_p"
 gen = genera_generadores_Zap(p, p1, p2, 10)
-puts "¿Cúal de los siguientes 10 generadores te gusta (teclea un número de 1 a 10)?"
+puts "Alice ¿Cúal de los siguientes 10 generadores te gusta (teclea un número de 1 a 10)?"
 i = 1
 gen.each do |g|
   puts "#{i}. #{g}"
@@ -115,7 +115,7 @@ else
   g = gen[0]
 end
 
-puts "\n¿Alice cual es tu llave privada como cadena (4 letras)?"
+puts "\nAlice, ¿Cúal es tu llave privada como cadena (4 letras)?"
 priv_cad = $stdin.readline().chop[0..3]
 
 priv = codifica_cadena_como_numero(priv_cad)
