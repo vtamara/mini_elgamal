@@ -104,7 +104,7 @@ El mensaje decodifado es: 'bien'
 
 ```
 $ ./quiebra.rb 
-Atacanta, ¿Cúal es la llave pública de Alice?
+Atacante, ¿Cúal es la llave pública de Alice?
 ¿g? 
 1574970086
 ¿K? 
